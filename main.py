@@ -22,7 +22,7 @@ async def statlookup(ctx):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
     username = ctx #"Emmir44"# "William_Swordsmith"
-    userid = await GetUserSummary(username).perform_async().user.id
+    userid = await GetUserSummary(username).perform().user.id
 
     ldr = GetUserLeaderboard(userid).perform()
     runs = ldr.runs
