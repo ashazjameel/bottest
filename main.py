@@ -43,7 +43,6 @@ async def hello(interaction: discord.Interaction):
                 if 1 <= place <= 3:
                     epce_ldr[place] += 1
                     
-    print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
-    await ctx.send("Hello from Render!")
+    await interaction.response.send_message("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
 
 bot.run(TOKEN)
