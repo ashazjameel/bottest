@@ -14,7 +14,12 @@ tree = bot.tree
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
-    
+    try:
+        synced = await tree.sync(guild=guild)
+        print(f"Synced {len(synced)} command(s) to guild {GUILD_ID}")
+    except Exception as e:
+        print(f"Failed to sync commands: {e}")
+        
     GUILD_ID = 793898712806981673  # <-- replace with your Discord server ID
     guild = discord.Object(id=GUILD_ID)
     await tree.sync(guild=guild)   # instant sync for that server
