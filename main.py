@@ -46,7 +46,7 @@ async def hello(interaction: discord.Interaction):
                 if 1 <= place <= 3:
                     epce_ldr[place] += 1
                     
-    await interaction.response.send_messageawait interaction.response.send_message(
+    await interaction.response.send_message(
     f"Username: {username}\n"
     f"Entry Point: {ep_ldr}\n"
     f"Entry Point Category Extensions: {epce_ldr}"
