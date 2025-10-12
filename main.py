@@ -11,20 +11,6 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='/', intents=intents)
 tree = bot.tree
 
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user}')
-
-    GUILD_ID = 793898712806981673  # <-- replace with your Discord server ID
-    guild = discord.Object(id=GUILD_ID)
-    print("Slash commands synced!")
-
-    try:
-        synced = await tree.sync(guild=guild)
-        print(f"Synced {len(synced)} command(s) to guild {GUILD_ID}")
-    except Exception as e:
-        print(f"Failed to sync commands: {e}")
-        
 
 @tree.command(
     name="hello",
@@ -60,6 +46,21 @@ async def hello(interaction: discord.Interaction):
     f"Entry Point: {ep_ldr}\n"
     f"Entry Point Category Extensions: {epce_ldr}"
 )
+
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user}')
+
+    GUILD_ID = 793898712806981673  # <-- replace with your Discord server ID
+    guild = discord.Object(id=GUILD_ID)
+    print("Slash commands synced!")
+
+    try:
+        synced = await tree.sync(guild=guild)
+        print(f"Synced {len(synced)} command(s) to guild {GUILD_ID}")
+    except Exception as e:
+        print(f"Failed to sync commands: {e}")
+        
 
 
 bot.run(TOKEN)
