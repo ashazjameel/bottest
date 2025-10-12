@@ -18,10 +18,10 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
 
 @bot.command()
-async def statlookup(ctx):
+async def statlookup(ctxm username: str):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
-    username = "Emmir44"# "William_Swordsmith"
+    #username = "Emmir44"# "William_Swordsmith"
     userid1 = await GetUserSummary(username).perform_async()
     userid = userid1.user.id
 
