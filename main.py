@@ -1,5 +1,6 @@
 import os
 import discord
+from discord import app_commands
 from discord.ext import commands
 from speedruncompy import *
 
@@ -7,9 +8,9 @@ TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
 
 intents = discord.Intents.default()
 intents.message_content = True
-
+client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix='/', intents=intents)
-tree = bot.tree
+tree = app_commands.CommandTree(client)
 
 
 @tree.command(
