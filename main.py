@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from speedruncompy import *
 
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
 
@@ -14,12 +15,10 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
 
 @bot.command()
-async def hello(ctx):
+async def statlookup(ctx):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
-
-
-    username = "Emmir44"# "William_Swordsmith"
+    username = ctx #"Emmir44"# "William_Swordsmith"
     userid = GetUserSummary(username).perform().user.id
 
     ldr = GetUserLeaderboard(userid).perform()
@@ -40,6 +39,6 @@ async def hello(ctx):
                     epce_ldr[place] += 1
                     
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
-    await ctx.send("Hello from Render!")
+    await ctx.send(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
 
 bot.run(TOKEN)
