@@ -19,6 +19,10 @@ async def on_ready():
 
 @bot.command()
 async def statlookup(ctx, username: str):
+    if username == "":
+        await ctx.send("no username provided")
+        return
+        
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
     #username = "Emmir44"# "William_Swordsmith"
