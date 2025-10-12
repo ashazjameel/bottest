@@ -14,7 +14,10 @@ tree = bot.tree
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
-    await tree.sync()  # Register slash commands with Discord
+    
+    GUILD_ID = 793898712806981673  # <-- replace with your Discord server ID
+    guild = discord.Object(id=GUILD_ID)
+    await tree.sync(guild=guild)   # instant sync for that server
     print("Slash commands synced!")
 
 @tree.command(
