@@ -1,6 +1,7 @@
 import os
 import discord
 from discord.ext import commands
+from discord import app_commands
 from speedruncompy import *
 
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
