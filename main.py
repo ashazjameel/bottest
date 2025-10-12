@@ -21,7 +21,7 @@ async def on_ready():
 async def statlookup(ctx):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
-    username = ctx #"Emmir44"# "William_Swordsmith"
+    username = "Emmir44"# "William_Swordsmith"
     userid1 = await GetUserSummary(username).perform_async()
     userid = userid1.user.id
 
