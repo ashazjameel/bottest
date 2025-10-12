@@ -13,6 +13,8 @@ tree = bot.tree
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
+    await tree.sync()  # Register slash commands with Discord
+    print("Slash commands synced!")
 
 @tree.command(
     name="hello",
