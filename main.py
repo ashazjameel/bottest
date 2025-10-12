@@ -17,7 +17,6 @@ async def on_ready():
 
     GUILD_ID = 793898712806981673  # <-- replace with your Discord server ID
     guild = discord.Object(id=GUILD_ID)
-    await tree.sync(guild=guild)   # instant sync for that server
     print("Slash commands synced!")
 
     try:
