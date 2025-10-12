@@ -18,7 +18,7 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
 
 @bot.command()
-async def statlookup(ctxm username: str):
+async def statlookup(ctx, username: str):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
     #username = "Emmir44"# "William_Swordsmith"
