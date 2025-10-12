@@ -1,23 +1,20 @@
 import os
 import discord
-from discord import app_commands
 from discord.ext import commands
-from speedruncompy import *
 
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
 
 intents = discord.Intents.default()
 intents.message_content = True
-client = discord.Client(intents=intents)
+
 bot = commands.Bot(command_prefix='/', intents=intents)
-tree = app_commands.CommandTree(client)
 
+@bot.event
+async def on_ready():
+    print(f'Logged in as {bot.user}')
 
-@tree.command(
-    name="hello",
-    description="Say hello!"
-)
-async def hello(interaction: discord.Interaction):
+@bot.command()
+async def hello(ctx):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
 
@@ -42,26 +39,7 @@ async def hello(interaction: discord.Interaction):
                 if 1 <= place <= 3:
                     epce_ldr[place] += 1
                     
-    await interaction.response.send_message(
-    f"Username: {username}\n"
-    f"Entry Point: {ep_ldr}\n"
-    f"Entry Point Category Extensions: {epce_ldr}"
-)
-
-@bot.event
-async def on_ready():
-    print(f'Logged in as {bot.user}')
-
-    GUILD_ID = 793898712806981673  # <-- replace with your Discord server ID
-    guild = discord.Object(id=GUILD_ID)
-    print("Slash commands synced!")
-
-    try:
-        synced = await tree.sync(guild=guild)
-        print(f"Synced {len(synced)} command(s) to guild {GUILD_ID}")
-    except Exception as e:
-        print(f"Failed to sync commands: {e}")
-        
-
+    print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
+    await ctx.send("Hello from Render!")
 
 bot.run(TOKEN)
