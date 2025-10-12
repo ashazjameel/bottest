@@ -1,1 +1,3 @@
-python.py
+main.py
+discord.py
+
