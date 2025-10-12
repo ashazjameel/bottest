@@ -8,6 +8,8 @@ TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
 
 intents = discord.Intents.default()
 intents.message_content = True
+client = discord.Client(intents=intents)
+tree = app_commands.CommandTree(client)
 
 bot = commands.Bot(command_prefix='/', intents=intents)
 
