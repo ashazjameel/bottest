@@ -13,8 +13,11 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 async def on_ready():
     print(f'Logged in as {bot.user}')
 
-@bot.command()
-async def hello(ctx):
+@tree.command(
+    name="hello",
+    description="Say hello!"
+)
+async def hello(interaction: discord.Interaction):
     ep = "j1nermw1"
     ep_ce = "9do8wj31"
 
