@@ -1,9 +1,9 @@
 stuff to do:
 
 make it output look nicer <br />
-add slash commands
-better error handling (idk)
-set usernames (no ones gonna use ts anyways)
-|_ brute force search the ep leaderboard
-|_ name autofill
-add profiles
+add slash commands <br />
+better error handling (idk) <br />
+set usernames (no ones gonna use ts anyways) <br />
+  |_ brute force search the ep leaderboard <br />
+  |_ name autofill <br />
+add profiles <br />
