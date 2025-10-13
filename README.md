@@ -5,3 +5,5 @@ add slash commands
 better error handling (idk)
 set usernames (no ones gonna use ts anyways)
 |_ brute force search the ep leaderboard
+|_ name autofill
+add profiles
