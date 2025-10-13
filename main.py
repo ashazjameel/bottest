@@ -24,7 +24,7 @@ async def on_ready():
     await bot.tree.clear_commands(guild=discord.Object(id=guildid))
     await bot.tree.sync(guild=discord.Object(id=guildid))
 
-###slash command###
+"""###slash command###
                     
 @tree.command(
     name="commandname",
@@ -34,10 +34,15 @@ async def on_ready():
 async def first_command(interaction: discord.Interaction):
     await interaction.response.send_message("Hello!")
     
-###################
+###################"""
                     
-@bot.command()
-async def statlookup(ctx, username: str):
+@tree.command( #@bot.command()
+    name="lookup",
+    description="Checks a user's runs",
+    guild=discord.Object(id=guildid)
+)
+
+async def statlookup(interaction: discord.Interaction, username: str):
     if username is None:
         await ctx.send("no username provided")
         return
