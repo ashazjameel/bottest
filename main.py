@@ -27,7 +27,7 @@ async def on_ready():
     description="My first application Command",
     guild=discord.Object(id=guildid)
 )
-async def first_command(interaction):
+async def first_command(interaction: discord.Interaction):
     await interaction.response.send_message("Hello!")
     
 ###################
