@@ -4,6 +4,27 @@ from discord.ext import commands
 from discord import app_commands
 from speedruncompy import *
 
+
+
+from flask import Flask
+from threading import Thread
+
+app = Flask("")
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run():
+    app.run(host="0.0.0.0", port=10000)
+
+# Start Flask in a background thread
+t = Thread(target=run)
+t.start()
+
+
+
+
 guildid = 793898712806981673
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
 
