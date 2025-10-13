@@ -33,22 +33,22 @@ async def on_ready():
     description="My first application Command",
     guild=discord.Object(id=guildid)
 )
-async def first_command(interaction: discord.Interaction):
-    await interaction.response.send_message("Hello!")
+#async def first_command(interaction: discord.Interaction):
+    #await interaction.response.send_message("Hello!")
     
 ###################
                  
-"""@tree.command(
-    name="lookup",
-    description="Checks a user's runs",
-    guild=discord.Object(id=guildid)
-)"""
+#@tree.command(
+#    name="lookup",
+#    description="Checks a user's runs",
+#    guild=discord.Object(id=guildid)
+#)
 
-@bot.command()
-async def statlookup(ctx, username: str): #interaction: discord.Interaction, username: str):
+#@bot.command()
+async def statlookup(interaction: discord.Interaction, username: str):#(ctx, username: str): #interaction: discord.Interaction, username: str):
     if username is None:
-        #await interaction.response.send_message("no username provided")
-        await ctx.send("no username provided")
+        await interaction.response.send_message("no username provided")
+        #await ctx.send("no username provided")
         return
         
     ep = "j1nermw1"
@@ -75,8 +75,8 @@ async def statlookup(ctx, username: str): #interaction: discord.Interaction, use
                     epce_ldr[place] += 1
                     
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
-    #await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
-    await ctx.send(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
+    await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
+    #await ctx.send(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     embed = discord.Embed(title=f"{username}'s stats",description="description")
     embed_message = await ctx.send(embed=embed)
 
