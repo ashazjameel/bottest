@@ -1,7 +1,7 @@
 stuff to do:
 
-test username error handling <br />
 test slash commands <br />
+|_ fix embed message sending seperately
 
 make it output look nicer <br />
 |_ use embeds or sumn <br />
