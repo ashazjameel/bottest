@@ -4,6 +4,7 @@ from discord.ext import commands
 from discord import app_commands
 from speedruncompy import *
 
+guildid = 793898712806981673
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
 
 intents = discord.Intents.default()
@@ -16,6 +17,8 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
+    await tree.sync(guild=discord.Object(id=guildid)
+    print("Ready!")
 
 @bot.command()
 async def statlookup(ctx, username: str):
