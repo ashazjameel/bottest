@@ -3,6 +3,8 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from speedruncompy import *
+from discord import Interaction
+from discord import app_commands
 
 guildid = 793898712806981673
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
