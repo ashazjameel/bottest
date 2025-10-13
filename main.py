@@ -19,6 +19,10 @@ async def on_ready():
     print(f'Logged in as {bot.user}')
     await tree.sync(guild=discord.Object(id=guildid))
     print("Ready!")
+    # Clear ALL slash commands from this guild
+    await bot.tree.sync(guild=discord.Object(id=guildid))
+    await bot.tree.clear_commands(guild=discord.Object(id=guildid))
+    await bot.tree.sync(guild=discord.Object(id=guildid))
 
 ###slash command###
                     
