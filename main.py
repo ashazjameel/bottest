@@ -12,7 +12,7 @@ intents.message_content = True
 client = discord.Client(intents=intents)
 
 bot = commands.Bot(command_prefix='/', intents=intents)
-tree = bot.tree #app_commands.CommandTree(client)
+app_commands.CommandTree(client) #tree = bot.tree
 
 @bot.event
 async def on_ready():
