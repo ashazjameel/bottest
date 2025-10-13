@@ -42,7 +42,7 @@ async def first_command(interaction: discord.Interaction):
     guild=discord.Object(id=guildid)
 )
 
-async def statlookup(interaction: discord.Interaction, username: str):
+async def lookup(interaction: discord.Interaction, username: str):
     if username is None:
         await interaction.response.send_message("no username provided")
         #await ctx.send("no username provided")
