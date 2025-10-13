@@ -24,7 +24,7 @@ async def on_ready():
     await bot.tree.sync(guild=discord.Object(id=guildid))
     bot.tree.clear_commands(guild=discord.Object(id=guildid))
     await bot.tree.sync(guild=discord.Object(id=guildid))
-
+"""
 ###slash command###
                     
 @tree.command(
@@ -36,7 +36,7 @@ async def first_command(interaction: discord.Interaction):
     await interaction.response.send_message("Hello!")
     
 ###################
-                    
+   """                 
 """@tree.command(
     name="lookup",
     description="Checks a user's runs",
