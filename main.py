@@ -17,7 +17,7 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 @bot.event
 async def on_ready():
     print(f'Logged in as {bot.user}')
-    await tree.sync(guild=discord.Object(id=guildid)
+    await tree.sync(guild=discord.Object(id=guildid))
     print("Ready!")
 
 ###slash command###
