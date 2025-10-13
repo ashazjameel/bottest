@@ -46,7 +46,7 @@ async def first_command(interaction: discord.Interaction):
     guild=discord.Object(id=guildid)
 )"""
 
-@app_commands.command(name="",description="")
+@app_commands.command(name="lookup",description="e")
 #@bot.command()
 async def statlookup(ctx:Interaction, username: str): #interaction: discord.Interaction, username: str):
     if username is None:
