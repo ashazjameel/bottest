@@ -3,8 +3,6 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from speedruncompy import *
-from discord import Interaction
-from discord import app_commands
 
 guildid = 793898712806981673
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
@@ -46,9 +44,8 @@ async def first_command(interaction: discord.Interaction):
     guild=discord.Object(id=guildid)
 )"""
 
-@app_commands.command(name="lookup",description="e")
-#@bot.command()
-async def statlookup(ctx:Interaction, username: str): #interaction: discord.Interaction, username: str):
+@bot.command()
+async def statlookup(ctx, username: str): #interaction: discord.Interaction, username: str):
     if username is None:
         #await interaction.response.send_message("no username provided")
         await ctx.send("no username provided")
