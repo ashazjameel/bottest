@@ -25,7 +25,7 @@ async def on_ready():
 @tree.command(
     name="commandname",
     description="My first application Command",
-    guild=discord.Object(id=12417128931)
+    guild=discord.Object(id=guildid)
 )
 async def first_command(interaction):
     await interaction.response.send_message("Hello!")
