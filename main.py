@@ -13,7 +13,8 @@ client = discord.Client(intents=intents)
 
 bot = commands.Bot(command_prefix='/', intents=intents)
 app_commands.CommandTree(client)
-tree = app_commands.CommandTree(client)
+#tree = app_commands.CommandTree(client)
+tree = bot.tree
 
 @bot.event
 async def on_ready():
