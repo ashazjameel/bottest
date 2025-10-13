@@ -74,7 +74,7 @@ async def statlookup(interaction: discord.Interaction, username: str):
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
     await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     #await ctx.send(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
-    embed = discord.Embed(title="title",description="description")
+    embed = discord.Embed(title=f"{username}'s stats",description="description")
     embed_message = await ctx.send(embed=embed)
 
 bot.run(TOKEN)
