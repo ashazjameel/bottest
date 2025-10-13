@@ -2,6 +2,7 @@ stuff to do:
 
 test username error handling <br />
 test embeds <br />
+test slash commands <br />
 
 make it output look nicer <br />
 add slash commands <br />
