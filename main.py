@@ -45,7 +45,7 @@ async def first_command(interaction: discord.Interaction):
 )"""
 
 @bot.command()
-async def statlookup(ctx, username: str): #interaction: discord.Interaction, username: str):
+async def statlookup(ctx, username: str,interaction: discord.Interaction): #interaction: discord.Interaction, username: str):
     if username is None:
         #await interaction.response.send_message("no username provided")
         await ctx.send("no username provided")
