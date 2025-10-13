@@ -1,6 +1,6 @@
 stuff to do:
 
-make it output look nicer
+make it output look nicer <br />
 add slash commands
 better error handling (idk)
 set usernames (no ones gonna use ts anyways)
