@@ -1,5 +1,7 @@
 stuff to do:
 
+test username error handling <br />
+
 make it output look nicer <br />
 add slash commands <br />
 better error handling (idk) <br />
