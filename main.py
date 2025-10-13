@@ -28,11 +28,6 @@ async def on_ready():
 
 ###slash command###
                     
-@tree.command(
-    name="commandname",
-    description="My first application Command",
-    guild=discord.Object(id=guildid)
-)
 #async def first_command(interaction: discord.Interaction):
     #await interaction.response.send_message("Hello!")
     
@@ -45,6 +40,11 @@ async def on_ready():
 #)
 
 #@bot.command()
+@tree.command(
+    name="statslookup",
+    description="Checks a user's stats",
+    guild=discord.Object(id=guildid)
+)
 async def statlookup(interaction: discord.Interaction, username: str):#(ctx, username: str): #interaction: discord.Interaction, username: str):
     if username is None:
         await interaction.response.send_message("no username provided")
