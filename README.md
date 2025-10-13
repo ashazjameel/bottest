@@ -1,6 +1,7 @@
 stuff to do:
 
 test username error handling <br />
+test embeds <br />
 
 make it output look nicer <br />
 add slash commands <br />
