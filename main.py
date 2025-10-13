@@ -20,6 +20,18 @@ async def on_ready():
     await tree.sync(guild=discord.Object(id=guildid)
     print("Ready!")
 
+###slash command###
+                    
+@tree.command(
+    name="commandname",
+    description="My first application Command",
+    guild=discord.Object(id=12417128931)
+)
+async def first_command(interaction):
+    await interaction.response.send_message("Hello!")
+    
+###################
+                    
 @bot.command()
 async def statlookup(ctx, username: str):
     if username == "":
