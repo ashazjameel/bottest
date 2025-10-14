@@ -22,7 +22,9 @@ def run():
 t = Thread(target=run)
 t.start()
 
-
+first = "<:1st:1427708892678455477>"
+second = "<:2nd:1427708891390541925>"
+third = "<:3rd:1427708889499176960>"
 
 
 guildid = 793898712806981673
@@ -98,7 +100,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
     #await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     description f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}"
-    embed = discord.Embed(title=f"{username}'s stats",description=description)
+    title = f"{username}'s stats"
+    embed = discord.Embed(title=title,description=description)
     await interaction.response.send_message(embed=embed)
 
 bot.run(TOKEN)
