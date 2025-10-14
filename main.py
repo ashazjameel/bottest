@@ -83,18 +83,18 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     ldr = await GetUserLeaderboard(userid).perform_async()
     runs = ldr.runs
 
-    ep_ldr = {1:0,2:0,3:0}
-    epce_ldr = {1:0,2:0,3:0}
+    ep_ldr = {1:0,2:0,3:0,4:0}
+    epce_ldr = {1:0,2:0,3:0,4:0}
 
     for i in runs:
         if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
             place = i.place
             if i.gameId == ep:
-                if 1 <= place <= 3:
+                if 1 <= place <= 4:
                     ep_ldr[place] += 1             
             elif i.gameId == ep_ce:
             
-                if 1 <= place <= 3:
+                if 1 <= place <= 4:
                     epce_ldr[place] += 1
                     
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
