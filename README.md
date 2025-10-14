@@ -1,9 +1,8 @@
 stuff to do:
 
-test slash commands <br />
-|_ fix embed message sending seperately <br />
 test bot working 24/7 <br />
 
+create a leaderboard <br />
 make it output look nicer <br />
 |_ use embeds or sumn <br />
 add slash commands <br />
