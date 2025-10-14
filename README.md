@@ -3,6 +3,7 @@ stuff to do:
 test bot working 24/7 <br />
 
 create a leaderboard <br />
+|_ custom leaderboards <br />
 make it output look nicer <br />
 |_ use embeds or sumn <br />
 add slash commands <br />
