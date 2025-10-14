@@ -85,7 +85,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
     ep_ldr = {1:0,2:0,3:0,4:0}
     epce_ldr = {1:0,2:0,3:0,4:0}
-    b = " ‎ ‎ ‎ ‎"
+    b = " ‎ ‎ ‎"
 
     for i in runs:
         if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
