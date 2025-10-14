@@ -85,6 +85,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
     ep_ldr = {1:0,2:0,3:0,4:0}
     epce_ldr = {1:0,2:0,3:0,4:0}
+    b = " ‎ ‎ ‎ ‎"
 
     for i in runs:
         if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
@@ -99,7 +100,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
                     
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
     #await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
-    description = f"Entry Point: ‎e‎ ‎ e ‎  {first} {ep_ldr[1]} \t {second} {ep_ldr[2]} \t {third} {ep_ldr[3]} \n Entry Point Category Extensions: \t {first} {epce_ldr[1]} \t {second} {epce_ldr[2]} \t {third} {epce_ldr[1]}"
+    description = f"Entry Point:‎‎ {b} {first} {ep_ldr[1]} {b} {second} {ep_ldr[2]} {b} {third} {ep_ldr[3]} \n Entry Point Category Extensions: {b} {first} {epce_ldr[1]} {b} {second} {epce_ldr[2]} {b} {third} {epce_ldr[1]}"
     title = f"{username}'s stats"
     embed = discord.Embed(title=title,description=description)
     await interaction.response.send_message(embed=embed)
