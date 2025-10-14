@@ -68,7 +68,7 @@ async def on_ready():
 )
 async def statlookup(interaction: discord.Interaction, username: str):#(ctx, username: str): #interaction: discord.Interaction, username: str):
     if username is None:
-        await interaction.response.send_message("no username provided")
+        await interaction.response.send_message("no username provided")        #ts never runs lol
         #await ctx.send("no username provided")
         return
         
@@ -96,9 +96,9 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
                     epce_ldr[place] += 1
                     
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
-    await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
+    #await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     #await ctx.send(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     embed = discord.Embed(title=f"{username}'s stats",description="description")
-    await interaction.followup.send(embed=embed)
+    await interaction.response.send_message(embed=embed)
 
 bot.run(TOKEN)
