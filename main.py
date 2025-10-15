@@ -4,21 +4,9 @@ from discord.ext import commands
 from discord import app_commands
 from speedruncompy import *
 from time import sleep as wait
-"""
-from flask import Flask
-import threading
+from keep_alive import keep_alive
 
-
-# --- Flask setup ---
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "✅ Bot is running!"
-
-def run_web():
-    app.run(host="0.0.0.0", port=10000)
-"""
+keep_alive()
 
 first = "<:1st:1427708892678455477>"
 second = "<:2nd:1427708891390541925>"
