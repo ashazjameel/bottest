@@ -66,7 +66,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     #username = "Emmir44"# "William_Swordsmith"
     try:
         userid1 = await GetUserSummary(username).perform_async()
-    except NotFound:
+    except:
         await interaction.response.send_message("User not found")
         return 0
     userid = userid1.user.id
