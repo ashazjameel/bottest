@@ -5,6 +5,9 @@ from discord import app_commands
 from speedruncompy import *
 from time import sleep as wait
 
+from flask import Flask
+import threading
+
 
 # --- Flask setup ---
 app = Flask(__name__)
