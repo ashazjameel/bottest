@@ -6,23 +6,16 @@ from speedruncompy import *
 from time import sleep as wait
 
 
-"""
-from flask import Flask
-from threading import Thread
+# --- Flask setup ---
+app = Flask(__name__)
 
-app = Flask("")
-
-@app.route("/")
+@app.route('/')
 def home():
-    return "Bot is running!"
+    return "✅ Bot is running!"
 
-def run():
+def run_web():
     app.run(host="0.0.0.0", port=10000)
 
-# Start Flask in a background thread
-t = Thread(target=run)
-t.start()
-"""
 
 first = "<:1st:1427708892678455477>"
 second = "<:2nd:1427708891390541925>"
@@ -110,7 +103,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
 
 
-#WILL DEFINELTY BREAK
-while True:
+
+if __name__ == "__main__":
+    threading.Thread(target=run_web).start()
     bot.run(TOKEN)
-    wait(10*60)
