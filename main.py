@@ -5,6 +5,7 @@ from discord import app_commands
 from speedruncompy import *
 from time import sleep as wait
 from keep_alive import keep_alive
+import asyncio
 
 keep_alive()
 
