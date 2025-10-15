@@ -3,9 +3,10 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 from speedruncompy import *
+from time import sleep as wait
 
 
-
+"""
 from flask import Flask
 from threading import Thread
 
@@ -21,6 +22,7 @@ def run():
 # Start Flask in a background thread
 t = Thread(target=run)
 t.start()
+"""
 
 first = "<:1st:1427708892678455477>"
 second = "<:2nd:1427708891390541925>"
@@ -106,4 +108,9 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     embed = discord.Embed(title=title,description=description)
     await interaction.response.send_message(embed=embed)
 
-bot.run(TOKEN)
+
+
+#WILL DEFINELTY BREAK
+while True:
+    bot.run(TOKEN)
+    wait(10*60)
