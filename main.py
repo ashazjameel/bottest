@@ -31,8 +31,6 @@ tree = bot.tree
 async def on_ready():
     print(f'Logged in as {bot.user}')
     await bot.tree.sync()
-    bot.tree.clear_commands()
-    await bot.tree.sync()
     #await tree.sync(guild=discord.Object(id=guildid))
     print("Ready!")
     """
@@ -58,7 +56,7 @@ async def on_ready():
 @tree.command(
     name="statslookup",
     description="Checks a user's stats",
-    guild=discord.Object(id=guildid)
+    #guild=discord.Object(id=guildid)
 )
 async def statlookup(interaction: discord.Interaction, username: str):#(ctx, username: str): #interaction: discord.Interaction, username: str):
     if username is None:
