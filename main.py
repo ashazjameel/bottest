@@ -75,6 +75,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
         await interaction.response.send_message("User not found")
         return 0
     userid = userid1.user.id
+    
+    link = await GetUserSummary(username).perform_async().user.user.staticAssets[0].path
 
     ldr = await GetUserLeaderboard(userid).perform_async()
     runs = ldr.runs
@@ -101,7 +103,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     description = f"Entry Point:‎‎ {b} {first} {ep_ldr[1]} {b} {second} {ep_ldr[2]} {b} {third} {ep_ldr[3]} {b} {fourth} {ep_ldr[4]} \n Entry Point Category Extensions: {b} {first} {epce_ldr[1]} {b} {second} {epce_ldr[2]} {b} {third} {epce_ldr[3]} {b} {fourth} {epce_ldr[4]}"
     title = f"{username}'s stats"
     embed = discord.Embed(title=title,description=description)#,color=0x00ff00)
-    embed.set_author(name=username, icon_url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")
+    embed.set_author(name=username, icon_url=f"https://www.speedrun.com{link}")
+    #embed.set_author(name=username, icon_url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")   good
     #embed.set_thumbnail(url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")     ts more like a thumbnail icl
     #embed.add_field(name="Field1", value="hi", inline=False)
     await interaction.response.send_message(embed=embed)
