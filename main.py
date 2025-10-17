@@ -31,8 +31,8 @@ tree = bot.tree
 async def on_ready():
     print(f'Logged in as {bot.user}')
     await bot.tree.sync()
-    bot.tree.clear_commands()
-    await bot.tree.sync()
+    bot.tree.clear_commands()     #delete 
+    await bot.tree.sync()         #ts maybe
     #await tree.sync(guild=discord.Object(id=guildid))
     print("Ready!")
     """
@@ -98,9 +98,9 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     #await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     description = f"Entry Point:‎‎ {b} {first} {ep_ldr[1]} {b} {second} {ep_ldr[2]} {b} {third} {ep_ldr[3]} {b} {fourth} {ep_ldr[4]} \n Entry Point Category Extensions: {b} {first} {epce_ldr[1]} {b} {second} {epce_ldr[2]} {b} {third} {epce_ldr[3]} {b} {fourth} {epce_ldr[4]}"
     title = f"{username}'s stats"
-    embed = discord.Embed(title=title,description=description,color=0x00ff00)
-    embed.add_field(name="Field1", value="hi", inline=False)
-    embed.add_field(name="Field2", value="hi2", inline=False)
+    embed = discord.Embed(title=title,description=description)#,color=0x00ff00)
+    embed.set_image(url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")
+    #embed.add_field(name="Field1", value="hi", inline=False)
     await interaction.response.send_message(embed=embed)
 
 
