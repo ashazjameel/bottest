@@ -31,6 +31,8 @@ tree = bot.tree
 async def on_ready():
     print(f'Logged in as {bot.user}')
     await bot.tree.sync()
+    bot.tree.clear_commands()
+    await bot.tree.sync()
     #await tree.sync(guild=discord.Object(id=guildid))
     print("Ready!")
     """
