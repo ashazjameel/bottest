@@ -76,7 +76,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
         return 0
     userid = userid1.user.id
     
-    link = await GetUserSummary(username).perform_async().user.user.staticAssets[0].path
+    #link = await GetUserSummary(username).perform_async().user.user.staticAssets[0].path
 
     ldr = await GetUserLeaderboard(userid).perform_async()
     runs = ldr.runs
