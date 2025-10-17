@@ -79,6 +79,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     ldr = await GetUserLeaderboard(userid).perform_async()
     runs = ldr.runs
     username = ldr.user.name
+    colour = ldr.user.color1Id
 
     ep_ldr = {1:0,2:0,3:0,4:0}
     epce_ldr = {1:0,2:0,3:0,4:0}
