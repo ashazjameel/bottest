@@ -78,9 +78,12 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     userid = userid1.user.id
 
     link1 = await GetUserSummary(username).perform_async()
-    user1 = link1.user
-    if len(user1.staticAssets) != 0:
-        link = user1.staticAssets[1].path
+    images = link1.user.staticAssets
+    if len(images) != 0:
+        link = "/static/user/qjo0qgnj/image.png?v=44e25be"
+        for i in images:
+            if i["assetType"] == "image":
+                link = i.path
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
 
