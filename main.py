@@ -91,7 +91,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     username = ldr.user.name
     colour1 = ldr.user.color1Id
     colour = "FF0000"
-    for key, value in colours:
+    for key, value in colours.items():
         if value == colour1:
             colour = key
 
