@@ -13,7 +13,7 @@ first = "<:1st:1427708892678455477>"
 second = "<:2nd:1427708891390541925>"
 third = "<:3rd:1427708889499176960>"
 fourth = "<:4th:1427783463481639024>"
-colours = {"Azure":"gw3r7nq7","Blue":"1x3216j7","Coral":"ew6x2n47","Fuchsia":"qr3jl64g","Green":"w461onv1","Lavender":"pw37o6d7","Lightpink":"e7nmx3ym","Mint":"rq69m391","Orange":"9j3po614","Pink":"ryndx3gd","Purple":"1y6emnpv","Red":"4e3w46z5","Silver":"296vz3ve","White":"kr3q9nwx","Yellow":"gy3l7n4l"}
+colours = {"44BBEE":"gw3r7nq7","6666EE":"1x3216j7","E77471":"ew6x2n47","FF3091":"qr3jl64g","8AC951":"w461onv1","C279E5":"pw37o6d7","FFB3F3":"e7nmx3ym","09B876":"rq69m391","EF8241":"9j3po614","F772C5":"ryndx3gd","A010A0":"1y6emnpv","EE4444":"4e3w46z5","B8B8B8":"296vz3ve","FFFFFF":"kr3q9nwx","F0C03E":"gy3l7n4l"}
 
 
 guildid = 793898712806981673
