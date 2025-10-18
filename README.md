@@ -1,6 +1,6 @@
 stuff to do:
 
-test bot working 24/7 <br />
+
 
 create a leaderboard <br />
 |_ custom leaderboards <br />
@@ -11,3 +11,4 @@ set usernames (no ones gonna use ts anyways) <br />
   |_ brute force search the ep leaderboard <br />
   |_ name autofill <br />
 add profiles <br />
+add countries (:flag_{country}:) <br />
