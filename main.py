@@ -82,7 +82,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     if hasattr(user1,"staticAssets"):
         link = user.staticAssets[1].path
     else:
-        link = "text"
+        link = "/static/user/qjo0qgnj/image.png?v=44e25be"
 
     
     link = "/static/user/j9516yv8/image.jpg?v=e87ae57"
