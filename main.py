@@ -78,7 +78,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     userid = userid1.user.id
 
     link1 = await GetUserSummary(username).perform_async()
-    user1 = link1.user.user
+    user1 = link1.user
     if hasattr(user1,"staticAssets"):
         link = user1.staticAssets[1].path
     else:
