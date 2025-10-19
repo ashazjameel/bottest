@@ -93,7 +93,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     for i in country:
         countryId += countries[i.lower()]
     countryId = "🇬🇧"
-    country = bot.get_emoji(countryId)
+    #country = bot.get_emoji(countryId)
+    country = countryId
     
     #link = "/static/user/j9516yv8/image.jpg?v=e87ae57"
     ldr = await GetUserLeaderboard(userid).perform_async()
