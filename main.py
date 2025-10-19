@@ -14,6 +14,7 @@ second = "<:2nd:1427708891390541925>"
 third = "<:3rd:1427708889499176960>"
 fourth = "<:4th:1427783463481639024>"
 colours = {"44BBEE":"gw3r7nq7","6666EE":"1x3216j7","E77471":"ew6x2n47","FF3091":"qr3jl64g","8AC951":"w461onv1","C279E5":"pw37o6d7","FFB3F3":"e7nmx3ym","09B876":"rq69m391","EF8241":"9j3po614","F772C5":"ryndx3gd","A010A0":"1y6emnpv","EE4444":"4e3w46z5","B8B8B8":"296vz3ve","FFFFFF":"kr3q9nwx","F0C03E":"gy3l7n4l"}
+countries = {"a":"🇦", "b":"🇧", "c":"🇨", "d":"🇩", "e":"🇪", "f":"🇫", "g":"🇬", "h":"🇭", "i":"🇮", "j":"🇯", "k":"🇰", "l":"🇱", "m":"🇲", "n":"🇳", "o":"🇴", "p":"🇵", "q":"🇶", "r":"🇷", "s":"🇸", "t":"🇹", "u":"🇺", "v":"🇻", "w":"🇼", "x":"🇽", "y":"🇾", "z":"🇿",}
 
 
 guildid = 793898712806981673
@@ -87,8 +88,11 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
 
-    country = f":flag_{link1.user.areaId.split("/")[0]}:"
-    country = bot.getemoji(f"\\{country}")
+    country = link1.user.areaId.split("/")[0]
+    countryId = ""
+    for i in country:
+        countryId += countries[i.lower()]
+    country = bot.getemoji(countryId)
     
     #link = "/static/user/j9516yv8/image.jpg?v=e87ae57"
     ldr = await GetUserLeaderboard(userid).perform_async()
@@ -102,7 +106,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
     ep_ldr = {1:0,2:0,3:0,4:0}
     epce_ldr = {1:0,2:0,3:0,4:0}
-    b = " ‎ ‎ ‎"
+    b = " ‎ ‎ ‎"           #white-space
 
     for i in runs:
         if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
