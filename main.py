@@ -129,8 +129,14 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     await interaction.response.send_message(embed=embed)
 
 
+@tree.command(
+    name="leaderboard",
+    description="Shows the leaderboard for a given category,
+    #guild=discord.Object(id=guildid)
+)
+async def leaderboard(interaction: discord.Interaction):#(ctx, username: str): #interaction: discord.Interaction, username: str):
+    pass
 
 
-#if __name__ == "__main__":
-    #threading.Thread(target=run_web).start()
+
 bot.run(TOKEN)
