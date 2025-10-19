@@ -2,6 +2,7 @@ import os
 import discord
 from discord.ext import commands
 from discord import app_commands
+from discord import utils
 from speedruncompy import *
 from time import sleep as wait
 from keep_alive import keep_alive
@@ -89,7 +90,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
     country = f":flag_{link1.user.areaId.split("/")[0]}:"
     #test
-    country = discord.utils.get(ctx.guild.emojis, name=country)
+    country = utils.get(ctx.guild.emojis, name=country)
     
     #link = "/static/user/j9516yv8/image.jpg?v=e87ae57"
     ldr = await GetUserLeaderboard(userid).perform_async()
