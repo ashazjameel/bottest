@@ -92,6 +92,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     countryId = ""
     for i in country:
         countryId += countries[i.lower()]
+    countryId = "🇬🇧"
     country = bot.get_emoji(countryId)
     
     #link = "/static/user/j9516yv8/image.jpg?v=e87ae57"
