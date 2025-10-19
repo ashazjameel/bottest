@@ -88,7 +88,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
 
-    country = link1.user.areaId.split("/")[0]
+    country = f":flag_{link1.user.areaId.split("/")[0]}:"
     countryId = ""
     for i in country:
         countryId += countries[i.lower()]
