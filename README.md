@@ -1,6 +1,6 @@
 stuff to do:
 
-
+fix image re-sizing for pfp's
 
 create a leaderboard <br />
 |_ custom leaderboards <br />
