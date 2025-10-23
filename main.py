@@ -8,6 +8,7 @@ from keep_alive import keep_alive
 import asyncio
 from PIL import Image
 import requests
+from io import BytesIO
 
 keep_alive()
 
@@ -87,7 +88,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
                 link = i.path
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
-    #f = Image.open(requests.get(f"https://www.speedrun.com{link}", stream=True).raw)
+    f = Image.open(BytesIO(requests.get(f"https://www.speedrun.com{link}")).content)
     country = link1.user.areaId.split("/")[0]
     countryId = ""
     for i in country:
