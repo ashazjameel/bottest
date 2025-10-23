@@ -89,6 +89,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
     f = Image.open(BytesIO(requests.get(f"https://www.speedrun.com{link}").content))
+    image_link = f"https://cdn.filestackcontent.com/{IMAGE_API_KEY}/resize=width:{f.size[0]},height:{f.size[1]}/{link}"
     country = link1.user.areaId.split("/")[0]
     countryId = ""
     for i in country:
@@ -125,7 +126,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     description = f"Entry Point:‎‎ {b} {first} {ep_ldr[1]} {b} {second} {ep_ldr[2]} {b} {third} {ep_ldr[3]} {b} {fourth} {ep_ldr[4]} \n Entry Point Category Extensions: {b} {first} {epce_ldr[1]} {b} {second} {epce_ldr[2]} {b} {third} {epce_ldr[3]} {b} {fourth} {epce_ldr[4]}"
     title = f"{username}'s stats"
     embed = discord.Embed(title=title,description=description,color=int(colour, 16))
-    embed.set_author(name=username, icon_url=f)#f"https://www.speedrun.com{link}") #"https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")
+    embed.set_author(name=username, icon_url=image_link)#f"https://www.speedrun.com{link}") #"https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")
     #embed.set_author(name=username, icon_url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")   good
     #embed.set_thumbnail(url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")     ts more like a thumbnail icl
     #embed.add_field(name="Field1", value="hi", inline=False)             #use ts for the profile
