@@ -137,7 +137,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     #guild=discord.Object(id=guildid)
 )
 async def leaderboard(interaction: discord.Interaction):#(ctx, username: str): #interaction: discord.Interaction, username: str):
-    await interaction.response.send_message("¯\_(ツ)_/¯")             #placeholder code
+    await interaction.response.send_message("¯\\_(ツ)_/¯")             #placeholder code
     return False
 
 
