@@ -87,7 +87,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
                 link = i.path
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
-    f = Image.open(requests.get(f"https://www.speedrun.com{link}", stream=True).raw)
+    #f = Image.open(requests.get(f"https://www.speedrun.com{link}", stream=True).raw)
     country = link1.user.areaId.split("/")[0]
     countryId = ""
     for i in country:
