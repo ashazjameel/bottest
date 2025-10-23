@@ -22,6 +22,7 @@ countries = {"a":"🇦", "b":"🇧", "c":"🇨", "d":"🇩", "e":"🇪", "f":"�
 
 guildid = 793898712806981673
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
+IMAGE_API_KEY = os.environ['IMAGE_API_KEY']
 
 intents = discord.Intents.default()
 intents.message_content = True
