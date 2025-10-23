@@ -132,7 +132,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     embed.set_author(name=username, icon_url=f"https://www.speedrun.com{link}") #"https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")
     #embed.set_author(name=username, icon_url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")   good
     #embed.set_thumbnail(url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")     ts more like a thumbnail icl
-    #embed.add_field(name="Field1", value="hi", inline=False)
+    #embed.add_field(name="Field1", value="hi", inline=False)             #use ts for the profile
     await interaction.response.send_message(embed=embed)
 
 
