@@ -92,7 +92,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     f = Image.open(BytesIO(requests.get(f"https://www.speedrun.com{link}").content))
     #image_link = f"https://cdn.filestackcontent.com/{IMAGE_API_KEY}/resize=width:{f.size[0]},height:{f.size[1]},fit:crop/{link}"
     #test
-    image_link = "https://cdn.filestackcontent.com/AA3hldwYkSYG026IjoXhYz/resize=width:400,height:400,fit:crop/https://www.speedrun.com/static/user/qjo0qgnj/image.png?width=600&height=4600.png"
+    image_link = "https://cdn.filestackcontent.com/AA3hldwYkSYG026IjoXhYz/resize=width:400,height:400,fit:crop/https://www.speedrun.com/static/user/qjo0qgnj/image.png?width=600&height=4600"
     f = Image.open(BytesIO(requests.get(image_link).content))
     country = link1.user.areaId.split("/")[0]
     countryId = ""
@@ -128,7 +128,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     print("Username:",username,"Entry Point",ep_ldr,"Entry Point Category Extensions",epce_ldr)
     #await interaction.response.send_message(f"Username: {username} Entry Point {ep_ldr} Entry Point Category Extensions {epce_ldr}")
     description = f"Entry Point:‎‎ {b} {first} {ep_ldr[1]} {b} {second} {ep_ldr[2]} {b} {third} {ep_ldr[3]} {b} {fourth} {ep_ldr[4]} \n Entry Point Category Extensions: {b} {first} {epce_ldr[1]} {b} {second} {epce_ldr[2]} {b} {third} {epce_ldr[3]} {b} {fourth} {epce_ldr[4]}"
-    title = f"{f.size}{username}'s stats"
+    title = f"{username}'s stats"
     embed = discord.Embed(title=title,description=description,color=int(colour, 16))
     embed.set_author(name=username, icon_url=image_link)#f"https://www.speedrun.com{link}") #"https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")
     #embed.set_author(name=username, icon_url="https://www.speedrun.com/static/user/j9516yv8/image.jpg?v=e87ae57")   good
