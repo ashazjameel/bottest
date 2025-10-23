@@ -6,6 +6,7 @@ from speedruncompy import *
 from time import sleep as wait
 from keep_alive import keep_alive
 import asyncio
+from PIL import Image
 
 keep_alive()
 
@@ -85,7 +86,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
                 link = i.path
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
-
+    f = Image.open(f"https://www.speedrun.com{link}")
     country = link1.user.areaId.split("/")[0]
     countryId = ""
     for i in country:
@@ -135,7 +136,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     #guild=discord.Object(id=guildid)
 )
 async def leaderboard(interaction: discord.Interaction):#(ctx, username: str): #interaction: discord.Interaction, username: str):
-    pass
+    await interaction.response.send_message("¯\_(ツ)_/¯")             #placeholder code
+    return False
 
 
 
