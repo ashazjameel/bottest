@@ -90,7 +90,9 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     else:
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
     f = Image.open(BytesIO(requests.get(f"https://www.speedrun.com{link}").content))
-    image_link = f"https://cdn.filestackcontent.com/{IMAGE_API_KEY}/resize=width:{f.size[0]},height:{f.size[1]},fit:crop/{link}"
+    #image_link = f"https://cdn.filestackcontent.com/{IMAGE_API_KEY}/resize=width:{f.size[0]},height:{f.size[1]},fit:crop/{link}"
+    #test
+    image_link = "https://cdn.filestackcontent.com/AA3hldwYkSYG026IjoXhYz/resize=width:400,height:400,fit:crop/https://www.speedrun.com/static/user/qjo0qgnj/image.png?width=600&height=4600"
     country = link1.user.areaId.split("/")[0]
     countryId = ""
     for i in country:
