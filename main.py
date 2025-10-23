@@ -52,11 +52,6 @@ async def on_ready():
     
 ###################
                  
-#@tree.command(
-#    name="lookup",
-#    description="Checks a user's runs",
-#    guild=discord.Object(id=guildid)
-#)
 
 #@bot.command()
 @tree.command(
@@ -91,7 +86,6 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
         link = "/static/user/qjo0qgnj/image.png?v=44e25be"
     f = Image.open(BytesIO(requests.get(f"https://www.speedrun.com{link}").content))
     image_link = f"https://cdn.filestackcontent.com/{IMAGE_API_KEY}/resize=width:{min(f.size)},height:{min(f.size)},fit:crop/https://www.speedrun.com{link}"
-    #test
     #image_link = "https://cdn.filestackcontent.com/AA3hldwYkSYG026IjoXhYz/resize=width:400,height:400,fit:crop/https://www.speedrun.com/static/user/qjo0qgnj/image.png?width=600&height=4600"
     country = link1.user.areaId.split("/")[0]
     countryId = ""
@@ -111,7 +105,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
     ep_ldr = {1:0,2:0,3:0,4:0}
     epce_ldr = {1:0,2:0,3:0,4:0}
-    b = " ‎ ‎ ‎"           #white-space
+    b = " ‎ ‎ ‎"               #white-space
 
     for i in runs:
         if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
@@ -139,9 +133,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 @tree.command(
     name="leaderboard",
     description="Shows the leaderboard for a given category",
-    #guild=discord.Object(id=guildid)
 )
-async def leaderboard(interaction: discord.Interaction):#(ctx, username: str): #interaction: discord.Interaction, username: str):
+async def leaderboard(interaction: discord.Interaction):
     await interaction.response.send_message("¯\\_(ツ)_/¯")             #placeholder code
 
 
