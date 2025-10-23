@@ -132,7 +132,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
 @tree.command(
     name="leaderboard",
-    description="Shows the leaderboard for a given category,
+    description="Shows the leaderboard for a given category",
     #guild=discord.Object(id=guildid)
 )
 async def leaderboard(interaction: discord.Interaction):#(ctx, username: str): #interaction: discord.Interaction, username: str):
