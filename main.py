@@ -148,7 +148,7 @@ async def leaderboard(interaction: discord.Interaction):
     await interaction.response.defer()
     player_list = []
     for i,v in catlist_ep.items():
-        print(v,flush=True)
+        await interaction.followup.send(v)
         ldr = await GetGameLeaderboard2(gameId=ep, catergoryId=v).perform_async()
         plyr = ldr.playerList
         for x in plyr:
