@@ -144,7 +144,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     name="leaderboard",
     description="Shows the leaderboard for a given category",
 )
-async def leaderboard(interaction: discord.Interaction):
+async def leaderboard(interaction: discord.Interaction, ctx):
     player_list = []
     for i,v in catlist_ep.items():
         print(v,flush=True)
@@ -159,7 +159,8 @@ async def leaderboard(interaction: discord.Interaction):
         for x in plyr:
             if not(x.id in player_list):
                 player_list.append(x.id)
-    await interaction.response.send_message(len(player_list))
+    await ctx.send(len(player_list))
+    #await interaction.response.send_message(len(player_list))
 
 
 
