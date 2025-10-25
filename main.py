@@ -153,6 +153,7 @@ async def leaderboard(interaction: discord.Interaction):
         plyr = ldr.playerList
         for x in plyr:
             if not(x.id in player_list):
+                await interaction.followup.send(x)
                 player_list.append(x.id)
     for i,v in catlist_epce.items():
         ldr = await GetGameLeaderboard2(gameId=ep_ce, catergoryId=v).perform_async()
