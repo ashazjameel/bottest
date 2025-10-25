@@ -147,6 +147,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 async def leaderboard(interaction: discord.Interaction):
     player_list = []
     for i,v in catlist_ep.items():
+        print(v,flush=True)
         ldr = await GetGameLeaderboard2(gameId=ep, catergoryId=v).perform_async()
         plyr = ldr.playerList
         for x in plyr:
