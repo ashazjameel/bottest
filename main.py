@@ -19,6 +19,18 @@ fourth = "<:4th:1427783463481639024>"
 colours = {"44BBEE":"gw3r7nq7","6666EE":"1x3216j7","E77471":"ew6x2n47","FF3091":"qr3jl64g","8AC951":"w461onv1","C279E5":"pw37o6d7","FFB3F3":"e7nmx3ym","09B876":"rq69m391","EF8241":"9j3po614","F772C5":"ryndx3gd","A010A0":"1y6emnpv","EE4444":"4e3w46z5","B8B8B8":"296vz3ve","FFFFFF":"kr3q9nwx","F0C03E":"gy3l7n4l"}
 countries = {"a":"🇦", "b":"🇧", "c":"🇨", "d":"🇩", "e":"🇪", "f":"🇫", "g":"🇬", "h":"🇭", "i":"🇮", "j":"🇯", "k":"🇰", "l":"🇱", "m":"🇲", "n":"🇳", "o":"🇴", "p":"🇵", "q":"🇶", "r":"🇷", "s":"🇸", "t":"🇹", "u":"🇺", "v":"🇻", "w":"🇼", "x":"🇽", "y":"🇾", "z":"🇿",}
 
+ep = "j1nermw1"
+ep_ce = "9do8wj31"
+
+levelList_ep = {"The Blacksite":"y9mr34lw", "The Financier":"5wkno45w", "The Deposit":"5928leg9", "The Lakehouse":"29vlxg1w", "The Withdrawal":"xd4yzp0d", "The Scientist":"rdnl83nw",  "The SCRS":"ldy56qjw",  "Black Dusk":"gdr8lr89", "The Killhouse":"xd02yp09", "The Auction":"rw6lx2nw", "The Gala":"n93nek7w", "The Cache":"z98zqp79", "The Setup":"ldykqozw", "Lockup":"gdrorzzd", "Score":"nwlz08rd", "The Concept":"ewp3l2kd"}
+levelList_epce = {"The Blacksite":"n93z56nw", "The Financier":"z984v1gw", "The Deposit":"rdn4jeq9", "The Lakehouse":"ldyl7mk9", "The Withdrawal":"gdr6456d", "The Scientist":"nwl4xr09", "The SCRS":"ywexk6y9", "Black Dusk":"69zeokl9", "The Killhouse":"r9gq0v5d", "The Auction":"o9xr5p09", "The Gala":"495xo70d", "The Cache":"rdq42xk9", "The Setup":"5d7qkogw", "The Lockup":"kwj4lnnw", "The Score":"owo41zo9", "The Concept":"29v83xqd"}
+
+catlist_ep = {"Story %":"7dgnl742", "Solo":"jdrvo6l2", "Genocide":"q25mo88d", "Pacifist":"824geme2", "Ironman Solo":"vdo8wnok", "Trio":"02q3mw9k", "Duo":"jdz96062", "Ironman Multiplayer":"wkp16rvk", "Quad":"824gjen2", "Story % Multiplayer":"9kvo0j32", "100% Multiplayer":"rkllpe8k", "Ironman Genocide":"rkl3lz6k", "Freelancer":"wdmxn43k", "Ironman Pacifist":"w203pw52", "100%":"mke9379d", "Sabotaged Halcyon":"wdmxvo3k", "Planned The Final Strike":"wkp10e8k"}
+catlist_epce = {"No Perks":"wdm5oj32", "No Disguise":"wk60e7qk", "Armed and Armoured":"7kjo8pn2", "No Armor":"n2ye95zk", "Loud":"vdozgpvk", "Take out the trash":"9kvq6mod", "Take out the trash (Full Game)":"mkevlz82", "Pierre%":"9d8oe662", "Firing Range%":"5dw965e2", "Leveling":"jdr9o7gd"}
+# ^^^ organise ts if u want
+
+
+
 
 guildid = 793898712806981673
 TOKEN = os.environ['BOT_TOKEN']  # Fetch token from Render
@@ -65,8 +77,6 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
         #await ctx.send("no username provided")
         return
         
-    ep = "j1nermw1"
-    ep_ce = "9do8wj31"
     #username = "Emmir44"# "William_Swordsmith"
     try:
         userid1 = await GetUserSummary(username).perform_async()
@@ -135,7 +145,20 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     description="Shows the leaderboard for a given category",
 )
 async def leaderboard(interaction: discord.Interaction):
-    await interaction.response.send_message("¯\\_(ツ)_/¯")             #placeholder code
+    player_list = []
+    for i,v in catlist_ep.items():
+        ldr = await GetGameLeaderboard2(gameId=ep, catergoryId=v).perform_async()
+        plyr = ldr.playerList
+        for x in plyr:
+            if not(x.id in player_list):
+                player_list.append(x.id)
+    for i,v in catlist_epce.items():
+        ldr = await GetGameLeaderboard2(gameId=ep_ce, catergoryId=v).perform_async()
+        plyr = ldr.playerList
+        for x in plyr:
+            if not(x.id in player_list):
+                player_list.append(x.id)
+    await interaction.response.send_message(len(player_list))
 
 
 
