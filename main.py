@@ -148,7 +148,7 @@ async def leaderboard(interaction: discord.Interaction):
     await interaction.response.defer()
     player_list = []
     for i,v in catlist_ep.items():
-        await interaction.followup.send(f"Category: {i}")
+        #await interaction.followup.send(f"Category: {i}")
         ldr = await GetGameLeaderboard2(gameId=ep, categoryId=v).perform_async()
         plyr = ldr.playerList
         for x in plyr:
@@ -158,7 +158,7 @@ async def leaderboard(interaction: discord.Interaction):
                 player_list.append(x.id)
     for i,v in catlist_epce.items():
         ldr = await GetGameLeaderboard2(gameId=ep_ce, categoryId=v).perform_async()
-        await interaction.followup.send(f"Category: {i}")
+        #await interaction.followup.send(f"Category: {i}")
         plyr = ldr.playerList
         for x in plyr:
             if not(x.id in player_list):
