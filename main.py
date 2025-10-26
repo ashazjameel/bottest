@@ -145,7 +145,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     description="Shows the leaderboard for a given category",
 )
 async def leaderboard(interaction: discord.Interaction):
-    await interaction.response.defer()w
+    await interaction.response.defer()
     score_list = ()
     player_list = []
     for i,v in catlist_ep.items():
