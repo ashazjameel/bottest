@@ -141,29 +141,30 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
 
 async def fetch_user(x,msg,score_list, player_list,count):
-    userID = player_list[x]
-    ldr = await GetUserLeaderboard(userID).perform_async()
-    runs = ldr.runs
-    username = ldr.user.name
-    ep_ldr = {1:0,2:0,3:0,4:0}
-    epce_ldr = {1:0,2:0,3:0,4:0}
+    while True:
+        userID = player_list[x]
+        ldr = await GetUserLeaderboard(userID).perform_async()
+        runs = ldr.runs
+        username = ldr.user.name
+        ep_ldr = {1:0,2:0,3:0,4:0}
+        epce_ldr = {1:0,2:0,3:0,4:0}
     
-    for i in runs:
-        if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
-            place = i.place
-            if i.gameId == ep:
-                if 1 <= place <= 4:
-                    ep_ldr[place] += 1             
-            elif i.gameId == ep_ce:
-                if 1 <= place <= 4:
-                    epce_ldr[place] += 1
-    score = ep_ldr[1]*4+ep_ldr[2]*3+ep_ldr[3]*2+ep_ldr[4]*1+epce_ldr[1]*4+epce_ldr[2]*3+epce_ldr[3]*2+epce_ldr[4]*1
-    score_list.append((userID,score))
-    a = count[0]
-    count.pop(0)
-    count.append(a+1)
-    await msg.edit(content=f"Loading user stats [{a+1}/{len(player_list)}]")        #x+1
-    return
+        for i in runs:
+            if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
+                place = i.place
+                if i.gameId == ep:
+                    if 1 <= place <= 4:
+                        ep_ldr[place] += 1             
+                elif i.gameId == ep_ce:
+                    if 1 <= place <= 4:
+                        epce_ldr[place] += 1
+        score = ep_ldr[1]*4+ep_ldr[2]*3+ep_ldr[3]*2+ep_ldr[4]*1+epce_ldr[1]*4+epce_ldr[2]*3+epce_ldr[3]*2+epce_ldr[4]*1
+        score_list.append((userID,score))
+        a = count[0]
+        count.pop(0)
+        count.append(a+1)
+        await msg.edit(content=f"Loading user stats [{a+1}/{len(player_list)}]")        #x+1
+        return
     
 
 @tree.command(
