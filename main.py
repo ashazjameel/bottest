@@ -193,7 +193,7 @@ async def leaderboard(interaction: discord.Interaction):
 
     #for x in range(len(player_list)):
         
-        """
+    """
         userID = player_list[x]
         ldr = await GetUserLeaderboard(userID).perform_async()
         runs = ldr.runs
