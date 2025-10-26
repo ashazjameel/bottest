@@ -146,7 +146,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 )
 async def leaderboard(interaction: discord.Interaction):
     await interaction.response.defer()
-    score_list = ()
+    msg = await interaction.followup.send("Loading players...")
+    score_list = []
     player_list = []
     for i,v in catlist_ep.items():
         #await interaction.followup.send(f"Category: {i}")
@@ -164,7 +165,7 @@ async def leaderboard(interaction: discord.Interaction):
         for x in plyr:
             if not(x.id in player_list):
                 player_list.append(x.id)
-    msg = await interaction.followup.send(f"Total players: {len(player_list)}")
+    await msg.edit(f"Total players: {len(player_list)}")
 
     for i in range(len(player_list)):
         userID = player_list[i]
