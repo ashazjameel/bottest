@@ -174,7 +174,7 @@ async def fetch_user(x,msg,score_list, player_list,count, attempt):
             return
             break
         except:
-            await msg.edit(content=f"Error fetching user [{count[0]+1}] {attempt}")
+            await msg.edit(content=f"Error fetching user [{player_list[x]}] {attempt}")
             attempt += 1
             await asyncio.sleep(1)
 
