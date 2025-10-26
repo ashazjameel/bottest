@@ -163,7 +163,7 @@ async def leaderboard(interaction: discord.Interaction):
         for x in plyr:
             if not(x.id in player_list):
                 player_list.append(x.id)
-    await interaction.followup.send(len(player_list))
+    await interaction.followup.send(f"Total players: {len(player_list)}")
 
 
 
