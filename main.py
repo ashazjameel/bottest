@@ -149,6 +149,10 @@ async def fetch_user(x,msg,score_list, player_list,count, attempt):
     while not(fetched):
         try:
             userID = player_list[x]
+            if len(userID) != 8:
+                await msg.edit(content=f"Invalid user [{player_list[x]}")
+                return
+                break
             ldr = await GetUserLeaderboard(userID).perform_async()
             runs = ldr.runs
             username = ldr.user.name
