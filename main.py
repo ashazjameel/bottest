@@ -140,7 +140,7 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     await interaction.response.send_message(embed=embed)
 
 
-async def fetch_user(x,msg,score_list, player_list):
+async def fetch_user(x,msg,score_list, player_list,count):
     userID = player_list[x]
     ldr = await GetUserLeaderboard(userID).perform_async()
     runs = ldr.runs
@@ -159,7 +159,10 @@ async def fetch_user(x,msg,score_list, player_list):
                     epce_ldr[place] += 1
     score = ep_ldr[1]*4+ep_ldr[2]*3+ep_ldr[3]*2+ep_ldr[4]*1+epce_ldr[1]*4+epce_ldr[2]*3+epce_ldr[3]*2+epce_ldr[4]*1
     score_list.append((userID,score))
-    await msg.edit(content=f"Loading user stats [{x+1}/{len(player_list)}]")
+    a = count[0]
+    count.pop(0)
+    count.append(a+1)
+    await msg.edit(content=f"Loading user stats [{a+1}/{len(player_list)}]")        #x+1
     return
     
 
@@ -172,6 +175,7 @@ async def leaderboard(interaction: discord.Interaction):
     msg = await interaction.followup.send("Loading players...")
     score_list = []
     player_list = []
+    count = [0]
     for i,v in catlist_ep.items():
         #await interaction.followup.send(f"Category: {i}")
         ldr = await GetGameLeaderboard2(gameId=ep, categoryId=v).perform_async()
@@ -193,7 +197,7 @@ async def leaderboard(interaction: discord.Interaction):
     batch_size = 10
 
     for j in range(0,len(player_list),batch_size):
-        await asyncio.gather(*(fetch_user(x,msg,score_list,player_list) for x in range(j,j+batch_size)))        #len(player_list)
+        await asyncio.gather(*(fetch_user(x,msg,score_list,player_list,count) for x in range(j,j+batch_size)))        #len(player_list)
         await asyncio.sleep(1)
 
     #for x in range(len(player_list)):
