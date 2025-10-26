@@ -189,6 +189,7 @@ async def fetch_user(x,msg,score_list, player_list,count, attempt):
 async def leaderboard(interaction: discord.Interaction):
     await interaction.response.defer()
     msg = await interaction.followup.send("Loading players...")
+    global score_list                #might break
     score_list = []
     player_list = []
     count = [0]
@@ -218,7 +219,6 @@ async def leaderboard(interaction: discord.Interaction):
         await asyncio.sleep(0.5)
 
     score_list.sort(reverse=True,key = lambda x: x[1])
-    global score_list                #might break
     await msg.edit(score_list[:10])
     
 bot.run(TOKEN)
