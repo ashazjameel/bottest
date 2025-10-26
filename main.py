@@ -201,11 +201,6 @@ async def leaderboard(interaction: discord.Interaction):
             #await interaction.followup.send(x.id)
             if not(x.id in player_list):
                 #await interaction.followup.send(x)
-                if x.id == "u-8df38f34-699b-5496-9187-4f3ab39f08e7":
-                    for k in ldr.runList:
-                        if "u-8df38f34-699b-5496-9187-4f3ab39f08e7" in k.playerIds:
-                            await interaction.followup.send(k)
-                    await interaction.followup.send(x)
                 player_list.append(x.id)
     for i,v in catlist_epce.items():
         ldr = await GetGameLeaderboard2(gameId=ep_ce, categoryId=v).perform_async()
@@ -213,11 +208,6 @@ async def leaderboard(interaction: discord.Interaction):
         plyr = ldr.playerList
         for x in plyr:
             if not(x.id in player_list):
-                if x.id == "u-8df38f34-699b-5496-9187-4f3ab39f08e7":
-                    for k in ldr.runList:
-                        if "u-8df38f34-699b-5496-9187-4f3ab39f08e7" in k.playerIds:
-                            await interaction.followup.send(k)
-                    await interaction.followup.send(x)
                 player_list.append(x.id)
     await msg.edit(content=f"Total players: {len(player_list)}")
 
