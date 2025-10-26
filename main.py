@@ -168,6 +168,7 @@ async def fetch_user(x,msg,score_list, player_list,count):
             await msg.edit(content=f"Loading user stats [{a+1}/{len(player_list)}]")        #x+1
             fetched = True
             return
+            break
         except:
             await msg.edit(f"Error fetching user [{count[0]+1}]")
             await asyncio.sleep(1)
@@ -206,7 +207,7 @@ async def leaderboard(interaction: discord.Interaction):
 
     for j in range(0,len(player_list),batch_size):
         await asyncio.gather(*(fetch_user(x,msg,score_list,player_list,count) for x in range(j,j+batch_size)))        #len(player_list)
-        await asyncio.sleep(1)
+        await asyncio.sleep(0.2)
 
     #for x in range(len(player_list)):
         
