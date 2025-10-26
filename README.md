@@ -1,5 +1,6 @@
 stuff to do:
 
+write code to save/load leaderboard to prevent regenerating leaderboard every time
 
 create a leaderboard <br />
 |_ custom leaderboards <br />
