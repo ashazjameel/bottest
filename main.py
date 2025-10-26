@@ -218,6 +218,7 @@ async def leaderboard(interaction: discord.Interaction):
         await asyncio.sleep(0.5)
 
     score_list.sort(reverse=True,key = lambda x: x[1])
+    global score_list                #might break
     await msg.edit(score_list[:10])
     
 bot.run(TOKEN)
