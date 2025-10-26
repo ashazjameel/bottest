@@ -189,7 +189,7 @@ async def leaderboard(interaction: discord.Interaction):
             if not(x.id in player_list):
                 player_list.append(x.id)
     await msg.edit(content=f"Total players: {len(player_list)}")
-    await asyncio.gather(*(fetch_user(x,msg,score_list,player_list) for x in player_list))
+    await asyncio.gather(*(fetch_user(x,msg,score_list,player_list) for x in range(len(player_list))))
 
     #for x in range(len(player_list)):
         
