@@ -141,7 +141,6 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
 
 
 async def fetch_user(x,msg,score_list, player_list):
-    global score_list
     userID = player_list[x]
     ldr = await GetUserLeaderboard(userID).perform_async()
     runs = ldr.runs
