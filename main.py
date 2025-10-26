@@ -165,12 +165,12 @@ async def fetch_user(x,msg,score_list, player_list,count):
             a = count[0]
             count.pop(0)
             count.append(a+1)
-            await msg.edit(content=f"Loading user stats [{a+1}/{len(player_list)}]")        #x+1
+            await msg.edit(content=f"Loading user stats {username} [{a+1}/{len(player_list)}]")        #x+1
             fetched = True
             return
             break
         except:
-            await msg.edit(f"Error fetching user {username} [{count[0]+1}]")
+            await msg.edit(f"Error fetching user [{count[0]+1}]")
             await asyncio.sleep(1)
             
     
