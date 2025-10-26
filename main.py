@@ -140,7 +140,10 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     await interaction.response.send_message(embed=embed)
 
 
-async def fetch_user(x,msg,score_list, player_list,count):
+
+
+
+async def fetch_user(x,msg,score_list, player_list,count, attempt):
     fetched = False
     while not(fetched):
         try:
@@ -170,10 +173,13 @@ async def fetch_user(x,msg,score_list, player_list,count):
             return
             break
         except:
-            await msg.edit(content=f"Error fetching user [{count[0]+1}]")
+            await msg.edit(content=f"Error fetching user [{count[0]+1}] {attempt}")
+            attempt += 1
             await asyncio.sleep(1)
             
     
+
+
 
 @tree.command(
     name="leaderboard",
@@ -206,7 +212,7 @@ async def leaderboard(interaction: discord.Interaction):
     batch_size = 10
 
     for j in range(0,len(player_list),batch_size):
-        await asyncio.gather(*(fetch_user(x,msg,score_list,player_list,count) for x in range(j,min(j+batch_size,len(player_list)))))        #len(player_list)
+        await asyncio.gather(*(fetch_user(x,msg,score_list,player_list,count,1) for x in range(j,min(j+batch_size,len(player_list)))))        #len(player_list)
         #await interaction.followup.send(j)
         await asyncio.sleep(0.5)
 
