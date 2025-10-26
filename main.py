@@ -167,8 +167,8 @@ async def leaderboard(interaction: discord.Interaction):
                 player_list.append(x.id)
     await msg.edit(content=f"Total players: {len(player_list)}")
 
-    for i in range(len(player_list)):
-        userID = player_list[i]
+    for x in range(len(player_list)):
+        userID = player_list[x]
         ldr = await GetUserLeaderboard(userID).perform_async()
         runs = ldr.runs
         username = ldr.user.name
@@ -186,6 +186,6 @@ async def leaderboard(interaction: discord.Interaction):
                         epce_ldr[place] += 1
         score = ep_ldr[1]*4+ep_ldr[2]*3+ep_ldr[3]*2+ep_ldr[4]*1+epce_ldr[1]*4+epce_ldr[2]*3+epce_ldr[3]*2+epce_ldr[4]*1
         score_list.append((userID,score))
-        await msg.edit(content=f"Loading user stats [{i+1}/{len(player_list)}]")
+        await msg.edit(content=f"Loading user stats [{x+1}/{len(player_list)}]")
     
 bot.run(TOKEN)
