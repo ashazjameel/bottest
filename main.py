@@ -207,7 +207,7 @@ async def leaderboard(interaction: discord.Interaction):
                 player_list.append(x.id)
     await msg.edit(content=f"Total players: {len(player_list)}")
 
-    await interaction.followup.send(player_list[449])
+    
     batch_size = 10
 
     for j in range(0,len(player_list),batch_size):
