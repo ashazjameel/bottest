@@ -199,7 +199,7 @@ async def leaderboard(interaction: discord.Interaction):
         plyr = ldr.playerList
         for x in plyr:
             #await interaction.followup.send(x.id)
-            if not(x.id in player_list):
+            if not(x.id in player_list and len(x.id) == 8):
                 #await interaction.followup.send(x)
                 player_list.append(x.id)
     for i,v in catlist_epce.items():
@@ -207,7 +207,7 @@ async def leaderboard(interaction: discord.Interaction):
         #await interaction.followup.send(f"Category: {i}")
         plyr = ldr.playerList
         for x in plyr:
-            if not(x.id in player_list):
+            if not(x.id in player_list and len(x.id) == 8):
                 player_list.append(x.id)
     await msg.edit(content=f"Total players: {len(player_list)}")
 
