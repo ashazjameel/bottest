@@ -145,7 +145,8 @@ async def statlookup(interaction: discord.Interaction, username: str):#(ctx, use
     description="Shows the leaderboard for a given category",
 )
 async def leaderboard(interaction: discord.Interaction):
-    await interaction.response.defer()
+    await interaction.response.defer()w
+    score_list = ()
     player_list = []
     for i,v in catlist_ep.items():
         #await interaction.followup.send(f"Category: {i}")
@@ -163,8 +164,27 @@ async def leaderboard(interaction: discord.Interaction):
         for x in plyr:
             if not(x.id in player_list):
                 player_list.append(x.id)
-    await interaction.followup.send(f"Total players: {len(player_list)}")
+    msg = await interaction.followup.send(f"Total players: {len(player_list)}")
 
-
-
+for i in range(len(player_list)):
+    userID = player_list[i]
+    ldr = await GetUserLeaderboard(userID).perform_async()
+    runs = ldr.runs
+    username = ldr.user.name
+    ep_ldr = {1:0,2:0,3:0,4:0}
+    epce_ldr = {1:0,2:0,3:0,4:0}
+    
+    for i in runs:
+        if i.place != None and (i.gameId == ep or i.gameId == ep_ce):
+            place = i.place
+            if i.gameId == ep:
+                if 1 <= place <= 4:
+                    ep_ldr[place] += 1             
+            elif i.gameId == ep_ce:
+                if 1 <= place <= 4:
+                    epce_ldr[place] += 1
+    score = ep_ldr[1]*4+ep_ldr[2]*3+ep_ldr[3]*2+ep_ldr[4]*1+epce_ldr[1]*4+epce_ldr[2]*3+epce_ldr[3]*2+epce_ldr[4]*1
+    score_list.append((userID,score))
+    await msg.edit(f"Loading user stats [{i+1}/{len(player_list)}]")
+    
 bot.run(TOKEN)
