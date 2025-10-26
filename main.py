@@ -165,7 +165,7 @@ async def fetch_user(x,msg,score_list, player_list,count):
             a = count[0]
             count.pop(0)
             count.append(a+1)
-            await msg.edit(content=f"Loading user stats {username} [{a+1}/{len(player_list)}]")        #x+1
+            await msg.edit(content=f"Loading user stats: {username} [{a+1}/{len(player_list)}]")        #x+1
             fetched = True
             return
             break
